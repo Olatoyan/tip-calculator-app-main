@@ -17,6 +17,10 @@ export default {
       boxShadow: {
         "bg-sh": "0px 32px 43px 0px rgba(79, 166, 175, 0.20)",
       },
+      screens: {
+        tablet: {max: '43.75em'},
+        mobile: {max: '31.25em'}
+      }
     },
   },
   plugins: [],

@@ -29,7 +29,7 @@ function SelectTip({ tips, onSelectTip, onTipChange }: SelectTipProps) {
       </h2>
 
       <div>
-        <ul className="grid grid-cols-3 gap-6">
+        <ul className="grid grid-cols-3 gap-6 mobile:grid-cols-2">
           <SelectTipItem tip={5} onSelectTip={onSelectTip} tips={tips} />
           <SelectTipItem tip={10} onSelectTip={onSelectTip} tips={tips} />
           <SelectTipItem tip={15} onSelectTip={onSelectTip} tips={tips} />

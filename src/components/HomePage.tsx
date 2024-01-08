@@ -33,10 +33,10 @@ function HomePage() {
   const totalPerPerson = +((bill / people + tipPerPerson)).toFixed(2);
 
   return (
-    <main className=" max-w-[92rem] flex flex-col gap-36 items-center">
+    <main className=" max-w-[92rem] flex flex-col gap-36 items-center mobile:gap-16 mobile:pt-16">
       <Logo />
 
-      <section className="bg-white rounded-[2.5rem] shadow-bg-sh p-[3.2rem] grid grid-cols-2 gap-12">
+      <section className="bg-white rounded-[2.5rem] shadow-bg-sh p-[3.2rem] grid grid-cols-2 gap-12 tablet:grid-cols-1 tablet:rounded-[2.5rem_2.5rem_0_0] mobile:px-8">
         <CalculateBox
           bill={bill}
           onBillChange={handleBillChange}

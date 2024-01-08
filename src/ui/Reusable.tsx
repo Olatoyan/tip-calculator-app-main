@@ -39,7 +39,7 @@ function Reusable({ id, name, img, value, onChange }: ReusableProps) {
           value={value}
           onChange={handleInputChange}
           placeholder='0'
-          className="bg-transparent border-none outline-none text-right text-[2.4rem] font-bold text-very-dark-cyan"
+          className="bg-transparent border-none outline-none text-right text-[2.4rem] font-bold text-very-dark-cyan w-full"
         />
       </div>
     </div>
