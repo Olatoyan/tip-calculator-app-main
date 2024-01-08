@@ -23,6 +23,12 @@ function HomePage() {
     setTip(Number(tip));
   }
 
+  function resetCalculator(){
+    setBill(0);
+    setPeople(0);
+    setTip(0);
+  }
+
   const tipPerPerson = +((bill / people) * (tip / 100)).toFixed(2);
   const totalPerPerson = +((bill / people + tipPerPerson)).toFixed(2);
 
@@ -43,6 +49,7 @@ function HomePage() {
         <ResultsBox
           totalPerPerson={(tip === 0 || people === 0)? 0 : totalPerPerson}
           tipPerPerson={(tip === 0 || people === 0)? 0 : tipPerPerson}
+          resetCalculator={resetCalculator}
         />
       </section>
     </main>

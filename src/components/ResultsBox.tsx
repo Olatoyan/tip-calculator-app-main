@@ -1,9 +1,10 @@
 type ResultsBoxProps = {
   tipPerPerson: number;
   totalPerPerson: number;
+  resetCalculator: () => void;
 };
 
-function ResultsBox({ tipPerPerson, totalPerPerson }: ResultsBoxProps) {
+function ResultsBox({ tipPerPerson, totalPerPerson,resetCalculator }: ResultsBoxProps) {
   return (
     <div className="bg-very-dark-cyan rounded-3xl p-16 flex flex-col">
       <div className="flex justify-between items-center pb-[2.5rem]">
@@ -24,7 +25,7 @@ function ResultsBox({ tipPerPerson, totalPerPerson }: ResultsBoxProps) {
           ${totalPerPerson}
         </h3>
       </div>
-      <button className="uppercase bg-green-cyan rounded-lg py-4 text-[2rem] font-bold text-very-dark-cyan mt-auto">
+      <button className={`uppercase rounded-lg py-4 text-[2rem] font-bold text-very-dark-cyan mt-auto disabled:cursor-not-allowed ${tipPerPerson === 0 && totalPerPerson === 0 ? "bg-[#0D686D]" : "bg-green-cyan"}`} disabled={tipPerPerson === 0 && totalPerPerson === 0} onClick={resetCalculator}>
         Reset
       </button>
     </div>
