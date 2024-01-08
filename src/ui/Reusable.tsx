@@ -36,7 +36,7 @@ function Reusable({ id, name, img, value, onChange }: ReusableProps) {
         <img src={img} alt={`An icon for ${name}`} />
         <input
           type="text"
-          value={value}
+          // value={value}
           onChange={handleInputChange}
           placeholder='0'
           className="bg-transparent border-none outline-none text-right text-[2.4rem] font-bold text-very-dark-cyan w-full"
