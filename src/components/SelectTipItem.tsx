@@ -5,6 +5,9 @@ type SelectTipItemProps = {
 };
 
 function SelectTipItem({ tip, onSelectTip, tips }: SelectTipItemProps) {
+
+
+ 
   return (
     <li>
       <button

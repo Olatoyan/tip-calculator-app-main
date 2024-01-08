@@ -8,6 +8,7 @@ type CalculateBoxProps = {
   onBillChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onPeopleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSelectTip: (tip: number) => void;
+  onTipChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 function CalculateBox({
@@ -17,6 +18,7 @@ function CalculateBox({
   onPeopleChange,
   tip,
   onSelectTip,
+  onTipChange,
 }: CalculateBoxProps) {
   return (
     <div className="space-y-16 ">
@@ -27,7 +29,7 @@ function CalculateBox({
         value={bill}
         onChange={onBillChange}
       />
-      <SelectTip tips={tip} onSelectTip={onSelectTip} />
+      <SelectTip tips={tip} onSelectTip={onSelectTip} onTipChange={onTipChange} />
       <Reusable
         id="people"
         name="Number of People"

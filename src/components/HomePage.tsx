@@ -15,13 +15,16 @@ function HomePage() {
   function handlePeopleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setPeople(Number(e.target.value));
   }
+  function handleTipChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setTip(Number(e.target.value));
+  }
 
   function handleSelectTip(tip: number) {
     setTip(Number(tip));
   }
 
-  const tipPerPerson = (bill / people) * (tip / 100);
-  const totalPerPerson = bill / people + tipPerPerson;
+  const tipPerPerson = +((bill / people) * (tip / 100)).toFixed(2);
+  const totalPerPerson = +((bill / people + tipPerPerson)).toFixed(2);
 
   return (
     <main className=" max-w-[92rem] flex flex-col gap-36 items-center">
@@ -35,10 +38,11 @@ function HomePage() {
           onPeopleChange={handlePeopleChange}
           tip={tip}
           onSelectTip={handleSelectTip}
+          onTipChange={handleTipChange}
         />
         <ResultsBox
-          totalPerPerson={totalPerPerson}
-          tipPerPerson={tipPerPerson}
+          totalPerPerson={(tip === 0 || people === 0)? 0 : totalPerPerson}
+          tipPerPerson={(tip === 0 || people === 0)? 0 : tipPerPerson}
         />
       </section>
     </main>
