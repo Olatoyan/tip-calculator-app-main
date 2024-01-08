@@ -12,17 +12,17 @@ function Reusable({ id, name, img, value, onChange }: ReusableProps) {
     value = 0
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value.replace(/[^0-9]/g, '');
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const inputValue = e.target.value.replace(/[^0-9]/g, '');
 
-    onChange({
-      ...e,
-      target: {
-        ...e.target,
-        value: inputValue,
-      },
-    });
-  };
+  //   onChange({
+  //     ...e,
+  //     target: {
+  //       ...e.target,
+  //       value: inputValue,
+  //     },
+  //   });
+  // };
 
 
 
@@ -35,9 +35,9 @@ function Reusable({ id, name, img, value, onChange }: ReusableProps) {
       <div className="bg-input-bg flex items-center justify-between py-3 px-6">
         <img src={img} alt={`An icon for ${name}`} />
         <input
-          type="text"
+          type="number"
           // value={value}
-          onChange={handleInputChange}
+          onChange={onChange}
           placeholder='0'
           className="bg-transparent border-none outline-none text-right text-[2.4rem] font-bold text-very-dark-cyan w-full"
         />
